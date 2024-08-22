@@ -208,18 +208,6 @@ app.get('/kit', (req, res) => {
     });
 });
 
-app.get('/kit', (req, res) => {
-    const sql = "SELECT * FROM productss WHERE type = 'kit'";
-    db.query(sql, (err, data) => {
-        if (err) {
-            console.error('Error executing query: ', err);
-            return res.status(500).json({ error: err.message });
-        }
-        console.log('Data retrieved for /kit: ', data);
-        return res.json(data);
-    });
-});
-
 app.listen(8081, ()=>{
     console.log("listening::");
 })
